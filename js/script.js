@@ -61,7 +61,10 @@ var quotes = [
 ];
 
 
-// Create the getRandomQuote function and name it getRandomQuote
+//getRandomQuote function that generates random number to select quote from array and returns
+    function getRandomQuote(quotesArr) {
+        return quotesArr[Math.floor(Math.random() * quotesArr.length)];
+    }
 
 
 
