@@ -67,7 +67,7 @@ var quotes = [
     }
 
 
-//printQuote function returns quote in new string
+//printQuote function prints quote by giving quote-box class div proper html 
     function printQuote() {
         var randomQuote = getRandomQuote(quotes);
         var quoteProps = '';
@@ -80,6 +80,8 @@ var quotes = [
 
         document.getElementById('quote-box').innerHTML = quoteProps;
     }
+
+    printQuote();
 
 
 // This event listener will respond to "Show another quote" button clicks
