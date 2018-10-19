@@ -62,13 +62,24 @@ var quotes = [
 
 
 //getRandomQuote function that generates random number to select quote from array and returns
-    function getRandomQuote(quotesArr) {
-        return quotesArr[Math.floor(Math.random() * quotesArr.length)];
+    function getRandomQuote(array) {
+        return array[Math.floor(Math.random() * array.length)];
     }
 
 
-// Create the printQuote funtion and name it printQuote
+//printQuote function returns quote in new string
+    function printQuote() {
+        var randomQuote = getRandomQuote(quotes);
+        var quoteProps = '';
 
+        quoteProps = '<p class="quote">' + randomQuote.quote + '</p> \n <p class="source">'
+            + randomQuote.source + '<span class="citation">'
+            + randomQuote.citation + '</span> <span class="year">'
+            + randomQuote.year + '</span> <span class="category">' 
+            + randomQuote.category + '</span> </p>';
+
+        document.getElementById('quote-box').innerHTML = quoteProps;
+    }
 
 
 // This event listener will respond to "Show another quote" button clicks
