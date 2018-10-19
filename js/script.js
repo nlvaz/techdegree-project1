@@ -17,7 +17,7 @@ var quotes = [
         category: 'Happiness'
     },
     {
-        quote: 'The Universe is not obligated to make sense to you.',
+        quote: 'The Universe is under no obligation to make sense to you.',
         source: 'Neil deGrasse Tyson',
         citation: 'Astrophyiscs for People in a Hurry',
         year: '2017',
@@ -65,7 +65,6 @@ var quotes = [
     function getRandomQuote(quotesArr) {
         return quotesArr[Math.floor(Math.random() * quotesArr.length)];
     }
-
 
 
 // Create the printQuote funtion and name it printQuote
