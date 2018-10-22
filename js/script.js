@@ -61,15 +61,20 @@ var quotes = [
 ];
 
 //backgroudColor array with random color names to change background
-    var backgroundColor = [
-        'green',
-        'blue',
-        'purple', 
-        'red',
-        'pink',
-        'orange',
-        'black', 
-        'gray'];
+    var backColor = [
+        "green",
+        "blue",
+        "purple", 
+        "red",
+        "pink",
+        "orange",
+        "black",
+        "gray"];
+
+//function to choose random background color
+    function getRandomColor(colorArray) {
+        return colorArray[Math.floor(Math.random() * colorArray.length)];
+    }
 
 
 
@@ -90,16 +95,11 @@ var quotes = [
             + randomQuote.year + '</span> <span class="category">' 
             + randomQuote.category + '</span> </p>';
 
+        document.getElementById('quote-box').style.backgroundColor = getRandomColor(backColor);
         document.getElementById('quote-box').innerHTML = quoteProps;
-    }
-
-//function to choose random background color
-    function randomColor(colorArray) {
-        return colorArray[Math.floor(Math.random() * colorArray.length)];
     }
 
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
-//document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-    
+    document.getElementById('loadQuote').addEventListener("click", printQuote);
