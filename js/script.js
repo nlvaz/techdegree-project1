@@ -1,6 +1,6 @@
 // FSJS - Random Quote Generator
 
-// Array names quotes with quote objects within
+// Array named quotes with quote objects within
 var quotes = [
     {
         quote: 'It does not do well to dwell on dreams and forget to live.',
@@ -85,7 +85,7 @@ var quotes = [
     }
 
 
-//printQuote function prints quote by giving quote-box class div proper html and changes background color for the button and page
+//printQuote function prints quote by giving quote-box class div proper html and changes background color for the page
     function printQuote() {
         var randomQuote = getRandomQuote(quotes);
         var quoteProps = '';
@@ -105,6 +105,6 @@ var quotes = [
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
     document.getElementById('loadQuote').addEventListener("click", printQuote);
-    //document.getElementById('loadQuote').addEventListener(printQuote, 3000);
 
-    setInterval(printQuote(), 3000);
+//interval for every 5 seconds to run the print quote function
+    setInterval(printQuote, 7000);
