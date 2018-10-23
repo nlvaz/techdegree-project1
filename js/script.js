@@ -72,7 +72,7 @@ var quotes = [
         "gray"
     ];
 
-//function to choose random background color
+//function to choose random background color from array and returns
     function getRandomColor(colorArray) {
         return colorArray[Math.floor(Math.random() * colorArray.length)];
     }
