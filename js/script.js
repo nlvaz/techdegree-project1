@@ -69,7 +69,8 @@ var quotes = [
         "pink",
         "orange",
         "black",
-        "gray"];
+        "gray"
+    ];
 
 //function to choose random background color
     function getRandomColor(colorArray) {
@@ -84,18 +85,19 @@ var quotes = [
     }
 
 
-//printQuote function prints quote by giving quote-box class div proper html 
+//printQuote function prints quote by giving quote-box class div proper html and changes background color for the button and page
     function printQuote() {
         var randomQuote = getRandomQuote(quotes);
         var quoteProps = '';
+        var bgColor = getRandomColor(backColor);
 
-        quoteProps = '<p class="quote">' + randomQuote.quote + '</p> \n <p class="source">'
+        quoteProps = '<p class="quote">' + randomQuote.quote + '</p><p class="source">'
             + randomQuote.source + '<span class="citation">'
             + randomQuote.citation + '</span> <span class="year">'
             + randomQuote.year + '</span> <span class="category">' 
             + randomQuote.category + '</span> </p>';
 
-        document.getElementById('quote-box').style.backgroundColor = getRandomColor(backColor);
+        document.body.style.backgroundColor = bgColor;
         document.getElementById('quote-box').innerHTML = quoteProps;
     }
 
@@ -103,3 +105,6 @@ var quotes = [
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
     document.getElementById('loadQuote').addEventListener("click", printQuote);
+    //document.getElementById('loadQuote').addEventListener(printQuote, 3000);
+
+    setInterval(printQuote(), 3000);
